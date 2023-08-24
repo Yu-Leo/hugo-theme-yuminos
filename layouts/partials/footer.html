@@ -1,0 +1,39 @@
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner footertext">
+            {{- if .Site.Params.runTime.enabled -}}
+            <span id="run-time">
+                up
+                <b id="run-time-d">0</b>
+                days
+                <b id="run-time-h">0</b>
+                h
+            </span>
+            <span> | </span>
+            {{- end -}}
+
+            <span>Follow me on <a href="https://t.me/YU0DEV" target="_blank" class="footerlink">TELEGRAM</a></span>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.__theme = {
+            {{- if .Site.Params.runTime.enabled -}}
+            startTime: "{{- .Site.Params.runTime.startTime -}}"
+            {{- end -}}
+        }
+    </script>
+    
+    <script src='{{ "js/uptime.js" | absURL }}'></script>
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function() {
+          var header = document.getElementById('header');
+          if (header.classList.contains('mobile-on')) {
+            header.classList.remove('mobile-on');
+          } else {
+            header.classList.add('mobile-on');
+          }
+        });
+    </script>
+</footer>

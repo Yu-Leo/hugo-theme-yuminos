@@ -1,0 +1,23 @@
+{{- $todos := (findRE "<div class=\"alert alert-todo\" role=\"alert\">" .Content | len) -}}
+{{ if $todos }}
+    <div class="alert alert-todo" role="alert">
+        <img src='{{ "img/attention.svg" | absURL }}' width=22/>
+
+          {{ $todos := mod $todos 100 }}
+          {{ if and (ge $todos 5) (le $todos 20) }}
+            <span>Осталось <strong class="number-of-todos">{{ $todos }}</strong> TODO блоков</span>
+          {{ else }}
+            {{ $todos := mod $todos 10 }}
+
+            {{ if (eq $todos 1)}}
+                <span>Остался <strong class="number-of-todos">{{ $todos }}</strong> TODO блок</span>
+            {{ else }}
+              {{ if and (ge $todos 2) (le $todos 4) }}
+                <span>Осталось <strong class="number-of-todos">{{ $todos }}</strong> TODO блока</span>
+              {{ else }}
+                <span>Осталось <strong class="number-of-todos">{{ $todos }}</strong> TODO блоков</span>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+    </div>
+{{ end }}

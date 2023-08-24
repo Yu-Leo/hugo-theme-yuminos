@@ -1,0 +1,10 @@
+<!-- https://www.veriphor.com/articles/code-block-render-hooks/ -->
+{{ $result := transform.HighlightCodeBlock . }}
+
+{{ if eq .Type "" }}
+  <div class="highlight">
+    {{ $result.Inner }}
+  </div>
+{{ else }}
+  {{ $result.Wrapped }}
+{{ end }}

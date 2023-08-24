@@ -1,0 +1,13 @@
+{{ $page := . }}
+
+{{ with $page.Param "page.alert" }}
+    {{ if reflect.IsMap . }}
+        <div class="alert alert-{{ .type }}" role="alert">
+            <img src='{{ "img/pin.svg" | absURL }}' width=22/><span>{{ .message | markdownify }}</span>
+        </div>
+    {{ else }}
+        <div class="alert alert-info" role="alert">
+            <img src='{{ "img/pin.svg" | absURL }}' width=22/><span>{{ . | markdownify }}</span>
+        </div>
+    {{ end }}
+{{ end }}

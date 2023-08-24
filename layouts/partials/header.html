@@ -1,0 +1,22 @@
+<header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <!-- <div class="s-header-type-1__burger js-burger  s-header-type-1__mark-links"> -->
+            <!--     <span class="s-header-type-1__burger-line"> -->
+            <!--     </span> -->
+            <!-- </div>  -->
+            <a id="logo" class="logo-text" href="{{ .Site.Home.Permalink }}">YU<span class="my-logo-orange">0</span>DEV</a>
+            <nav id="main-nav">
+                {{ range .Site.Menus.main }}
+                    {{ $isRemote := strings.HasPrefix .URL "http" }}
+                    <a class="main-nav-link" {{ if $isRemote }} target="_blank"{{ end }} href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

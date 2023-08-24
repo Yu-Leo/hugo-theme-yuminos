@@ -1,0 +1,116 @@
+<article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner" id="article">
+        <div class="flexwrapper">
+            {{ if .Title }}
+            <header class="article-header">
+                <h1 class="article-title" itemprop="name">{{ .Title }}</h1>
+            </header>
+            {{ end }}
+
+            <div class="article-meta">
+                {{- if not .Params.omitDate }}
+                    <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "02.01.06" }}</time>
+                {{ end -}}
+                {{ if .Site.DisqusShortname }}
+                <div class="article-comment-link-wrap">
+                    <a href="{{ .RelPermalink }}#disqus_thread" class="article-comment-link">Comments</a>
+                </div>
+                {{ end }}
+            </div>
+        </div> 
+        
+        <footer class="article-footer">
+            {{ if .Params.tags }}
+                <ul class="article-tag-list">
+                    {{ range .Params.tags }}
+                    <li class="article-tag-list-item">
+                        <a class="article-tag-list-link" href="{{ "tags/" | absLangURL }}{{ . | urlize }}">
+                        <img src='{{ "img/tag.svg" | absURL }}' width=14 class="tag-icon"/>{{ . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+                
+            {{ if .Params.categories }}
+                <ul class="article-tag-list">
+                    {{ range .Params.categories }}
+                    <li class="article-tag-list-item">
+                        <a class="article-tag-list-link" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">
+                        <img src='{{ "img/folder.svg" | absURL }}' width=14 class="tag-icon"/>{{ . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        </footer>
+        
+        <div class="article-entry" itemprop="articleBody">
+            {{ partial "alert.html" . }}
+           
+            {{ partial "todos.html" . }}     
+            {{ .Content }}
+        </div>
+
+        {{ if not .Params.notoc }}
+            {{ if .TableOfContents }} <div class="article-toc" {{ if .Site.Params.SmartToc }}style="display:none;"{{ end }}>
+                <h3>{{ T "Contents" }}</h3>
+                {{ .TableOfContents }}
+            </div>
+            {{ end }}
+        {{ end }}
+
+        {{ if .Site.Params.SmartToc }}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script>
+            (function() {
+                var $toc = $('#TableOfContents');
+                if ($toc.length > 0) {
+                    var $window = $(window);
+
+                    function onScroll(){
+                        var currentScroll = $window.scrollTop();
+                        var h = $('.article-entry h1, .article-entry h2, .article-entry h3, .article-entry h4, .article-entry h5, .article-entry h6');
+                        var id = "";
+                        h.each(function (i, e) {
+                            e = $(e);
+                            if (e.offset().top - 10 <= currentScroll) {
+                                id = e.attr('id');
+                            }
+                        });
+                        var active = $toc.find('a.active');
+                        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+                        active.each(function (i, e) {
+                            $(e).removeClass('active').siblings('ul').hide();
+                        });
+                        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                            $(e).children('a').addClass('active').siblings('ul').show();
+                        });
+                    }
+
+                    $window.on('scroll', onScroll);
+                    $(document).ready(function() {
+                        $toc.find('a').parent('li').find('ul').hide();
+                        onScroll();
+                        document.getElementsByClassName('article-toc')[0].style.display = '';
+                    });
+                }
+            })();
+        </script>
+        {{ end }}
+    </div>
+    {{ partial "nav.html" . }}
+   
+    {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedMax }}
+
+    {{ if $related }}
+        <div class="art-head">читайте также</div>
+        <div>
+            {{ with $related }}
+              {{ range . }}
+                {{ partial "li.html" .}}
+              {{ end }}
+            {{ end }}
+        </div>
+    {{ end }}
+</article>
+

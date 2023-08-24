@@ -1,0 +1,47 @@
+<article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        <div class="flexwrapper">
+        {{ if .Title }}
+        <div class="flexleft">
+        <header class="article-header">
+            <h1 itemprop="name"><a class="article-title" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        </header>
+        {{ end }}
+        </div>
+
+        <div class="flexleft">
+        <div class="article-meta">
+            <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "02.01.06" }}</time>
+            {{ if .Site.DisqusShortname }}
+            <div class="article-comment-link-wrap">
+                <a href="{{ .RelPermalink }}#disqus_thread" class="article-comment-link">{{ T "Comments" }}</a>
+            </div>
+            {{ end }}
+        </div>
+        </div>
+        </div>
+        <footer class="article-footer">
+            {{ if .Params.tags }}
+                <ul class="article-tag-list">
+                    {{ range .Params.tags }}
+                    <li class="article-tag-list-item">
+                        <a class="article-tag-list-link" href="{{ "tags/" | absLangURL }}{{ . | urlize }}">
+                        <img src='{{ "img/tag.svg" | absURL }}' width=14 class="tag-icon" alt="tag"/>{{ . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+                
+            {{ if .Params.categories }}
+                <ul class="article-tag-list">
+                    {{ range .Params.categories }}
+                    <li class="article-tag-list-item">
+                        <a class="article-tag-list-link" href="{{ "categories/" | absLangURL }}{{ . | urlize }}">
+                        <img src='{{ "img/folder.svg" | absURL }}' width=14 class="tag-icon" alt="category"/>{{ . }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        </footer>
+    </div>
+</article>

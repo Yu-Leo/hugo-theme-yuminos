@@ -1,0 +1,22 @@
+{{ partial "head.html" . }}
+<body>
+<div id="container">
+    {{ partial "header.html" . }}
+    <section id="main" class="outer content">
+        <section class="archives-wrap">
+            <div class="archive-tag-wrap">
+                <span class="archive-tag"><img src='{{ "img/folder.svg" | absURL }}' width=22 class="tag-icon filter-black" alt="category"/>{{ .Title | lower }}</span>
+            </div>
+            <div>
+                {{ range .Paginator.Pages }}
+                {{ partial "li.html" . }}
+                {{ end }}
+            </div>
+
+            </section>
+        {{ partial "pagination.html" . }}
+    </section>
+    {{ partial "footer.html" . }}
+</div>
+</body>
+</html>

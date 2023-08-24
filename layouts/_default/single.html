@@ -1,0 +1,35 @@
+{{ partial "head.html" . }}
+
+<body>
+
+<div id="container">
+    {{ partial "header.html" . }}
+    <section id="main" class="outer content">
+        {{ partial "article.html" . }}
+
+        {{ if and (not .Params.nocomment) .Site.DisqusShortname }}
+            {{ template "_internal/disqus.html" . }}
+        {{ end }}
+    </section>
+    {{ partial "footer.html" . }}
+        
+    {{ if (findRE "<img" .Content 1) }}
+        <!-- https://stackoverflow.com/questions/18545077/image-fullscreen-on-click -->
+        <script src='{{ "js/zoom-images.js" | absURL }}'></script>
+    {{ end }}
+    
+    {{ if (findRE "<pre" .Content 1) }}
+        <script type="text/javascript">
+            window.path_to_copy_img = '{{ "img/copy.svg" | absURL }}'
+        </script>
+        <script src='{{ "js/copy-code-button.js" | absURL }}'></script>
+    {{ end }}
+
+    <script type="text/javascript">
+        window.path_to_link_img = '{{ "img/link.svg" | absURL }}'
+    </script>
+    <script src='{{ "js/permalink.js" | absURL }}'></script>
+    <script src='{{ "js/scroll-to-top.js" | absURL }}'></script>
+</div>
+</body>
+</html>
