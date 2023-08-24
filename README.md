@@ -56,7 +56,7 @@ paginate = 50
 
 ```toml
 [params]  
-    katex = true
+  katex = true
 ```
 
 ### RunTime
