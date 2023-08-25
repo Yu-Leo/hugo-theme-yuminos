@@ -9,10 +9,17 @@
                 <b id="run-time-h">0</b>
                 h
             </span>
-            <span> | </span>
             {{- end -}}
 
-            <span>Follow me on <a href="https://t.me/YU0DEV" target="_blank" class="footerlink">TELEGRAM</a></span>
+            {{ $telegram_url := index .Site.Params.social "telegram" }}
+            
+            {{- if and (.Site.Params.runTime.enabled) ($telegram_url) -}}
+                <span> | </span>
+            {{- end -}}
+
+            {{- if $telegram_url -}}
+                <span>FOLLOW ME ON <a href="{{ $telegram_url }}" target="_blank" class="footerlink">TELEGRAM</a></span>
+            {{- end -}}
         </div>
     </div>
 
