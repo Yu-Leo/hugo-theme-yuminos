@@ -1210,7 +1210,7 @@ li {
 .article-entry a.anchor {
   border-bottom: none;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   user-select: none;
 }
 
