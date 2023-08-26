@@ -17,6 +17,20 @@
   - Иконка сайта, отображаемая на вкладке в браузерах, расположена в файле `static/favicon.ico`.
 3. Корректное отображение и работа блока с оглавлением постов (`table of content`, `toc`) при включении данной опции в конфиге, а так же системы `Disqus` при интеграции её на Ваш сайт **не гарантируются!**
 
+## 🖼 Скриншоты
+
+**Главная страница**
+
+![screenshot.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/screenshot.png)
+
+**Страница тега**
+
+![tag.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/tag.png)
+
+**Статья**
+
+![article.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/article.png)
+
 ## 🔨 Установка
 
 Для того, чтобы установить тему **Yuminos**, склонируйте данный репозиторий в директорию `themes/` Вашего сайта:
@@ -58,6 +72,14 @@ paginate = 50
   katex = true
 ```
 
+<details>
+
+<summary>Скриншот</summary>
+
+![latex.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/latex.png)
+
+</details>
+
 ### RunTime
 
 Если данная опция включена (`enabled = true`), в футере будет выводится количество дней и часов, прошедших с момента, указанного в параметре `startTime`.
@@ -69,6 +91,14 @@ paginate = 50
     startTime = "2023-08-24T10:00:00"
 ```
 
+<details>
+
+<summary>Скриншот</summary>
+
+![footer.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/footer.png)
+
+</details>
+
 ### Ссылка на Telegram-канал
 
 Если URL указан, то в футере будет отображаться фраза "FOLLOW ME ON TELEGRAM", в которой слово "TELEGRAM" будет являться гиперссылкой на соответствующий URL.
@@ -78,6 +108,14 @@ paginate = 50
   [params.social]
     telegram = "https://t.me/YU0DEV"
 ```
+
+<details>
+
+<summary>Скриншот</summary>
+
+![footer.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/footer.png)
+
+</details>
 
 ## ⭐ Дополнительные возможности
 
@@ -99,9 +137,9 @@ page:
 ```
 
 Типы алёртов:
-- `danger` (красный)
-- `success` (зелёный)
 - `info` (синий)
+- `success` (зелёный)
+- `danger` (красный)
 
 Если Вам нужен информационный алёрт, можно использовать сокращённую форму:
 
@@ -111,6 +149,18 @@ page:
   alert: "Информационный алерт"
 ---
 ```
+
+<details>
+
+<summary>Скриншоты</summary>
+
+![info-alert.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/info-alert.png)
+
+![success-alert.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/success-alert.png)
+
+![danger-alert.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/danger-alert.png)
+
+</details>
 
 ### Блоки ToDo 
 
@@ -136,6 +186,16 @@ page:
 {{< td >}}
 ```
 
+<details>
+
+<summary>Скриншоты</summary>
+
+![todo-block.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/todo-block.png)
+
+![todo-alert.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/todo-alert.png)
+
+</details>
+
 ### Блоки кода
 
 Все блоки с кодом (оформленные в разметке Markdown, либо добавленные при помощи Hugo shortcodes) будут содержать кнопку "копировать", по нажатию на которую содержимое соответствующего блока с кодом будет скопировано в буфер обмена.
@@ -148,9 +208,25 @@ page:
     style = 'gruvbox'
 ```
 
+<details>
+
+<summary>Скриншот</summary>
+
+![codeblock.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/codeblock.png)
+
+</details>
+
 #### Shell
 
 Если в качестве языка для блока с кодом указан `shell`, то к каждой строке такого блока будет добавлен символ "$". При этом он не будет выделяться курсором вместе с остальным текстом, а так же не будет копироваться в буфер обмена при нажатии кнопки копирования. Эту фичу можно использовать для красивого оформления запускаемых из терминала команд (строк).
+
+<details>
+
+<summary>Скриншот</summary>
+
+![codeblock-shell.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/codeblock-shell.png)
+
+</details>
 
 ## 🎨 Цветовая палитра
 
@@ -176,4 +252,4 @@ page:
 - Дополнения: [@devpew](https://github.com/devpew)
 - Автор темы **Yuminos**: [@Yu-Leo](https://github.com/yu-leo)
 
-Проект разрабатывается под лицензией **MIT**. Полный текст - в файле [LICENSE](./LICENSE). 
+Проект разрабатывается под лицензией **MIT**. Полный текст - в файле [LICENSE](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/LICENSE). 
