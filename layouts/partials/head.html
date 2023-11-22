@@ -16,7 +16,11 @@
     <link href='{{ "webfonts/jetbrainsmono/main.css" | absURL }}' rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href='{{ "css/style.css" | absURL }}'>
-            
+
+    {{ if .Site.Params.thinkpadKbd }}
+        <link rel="stylesheet" href='{{ "css/thinkpad_kbd.css" | absURL }}'>
+    {{ end }}
+
     {{ range .Site.Params.customCss -}}
         <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
