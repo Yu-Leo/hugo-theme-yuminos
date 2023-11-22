@@ -860,7 +860,7 @@ a.article-title,
   margin: 0;
   font-size: 14px;
   background: #282828;
-  padding-top: 15px;
+  padding-top: 10px;
   color: #fff;
   line-height: 22px;
   padding-right: 48px;
@@ -906,7 +906,7 @@ a.article-title,
   border: none;
   margin: 0;
   padding: 0 15px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   padding-left: 0px;
 }
 .article-entry .highlight table {
