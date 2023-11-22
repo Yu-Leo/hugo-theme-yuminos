@@ -1464,3 +1464,19 @@ a.anchor {
   font-size: 1.2em;
 }
 
+.article-entry details {
+  margin-left: 15px;
+}
+
+.article-entry details summary {
+  margin: 0.5em 0;
+  margin-left: -15px;
+  cursor: pointer;
+  color: #444;
+  transition: color 150ms linear 0s;
+}
+
+.article-entry details summary:hover {
+  color: #F37E0C;
+}
+
