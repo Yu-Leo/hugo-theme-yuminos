@@ -5,15 +5,14 @@
     <section id="main" class="outer content">
         <section class="archives-wrap">
             <div class="archive-tag-wrap">
-                <span class="archive-tag">СТАТЬИ</span>
+                <span class="archive-tag">{{ .Title | lower }}</span>
             </div>
             <div>
-                {{ range where .Paginator.Pages "Params.hidden" "ne" "true"}}
-                    {{ if hasPrefix .RelPermalink "/posts" }}
-                        {{ partial "li.html" . }}
-                    {{ end }}
+                {{ range .Paginator.Pages }}
+                {{ partial "li.html" . }}
                 {{ end }}
             </div>
+
             </section>
         {{ partial "pagination.html" . }}
     </section>
@@ -21,3 +20,4 @@
 </div>
 </body>
 </html>
+
