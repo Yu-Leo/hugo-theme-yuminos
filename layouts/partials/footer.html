@@ -2,23 +2,9 @@
     <div class="outer">
         <div id="footer-info" class="inner footertext">
             {{- if .Site.Params.runTime.enabled -}}
-            <span id="run-time">
-                up
-                <b id="run-time-d">0</b>
-                days
-                <b id="run-time-h">0</b>
-                h
-            </span>
-            {{- end -}}
-
-            {{ $telegram_url := index .Site.Params.social "telegram" }}
-            
-            {{- if and (.Site.Params.runTime.enabled) ($telegram_url) -}}
-                <span> | </span>
-            {{- end -}}
-
-            {{- if $telegram_url -}}
-                <span>FOLLOW ME ON <a href="{{ $telegram_url }}" target="_blank" class="footerlink">TELEGRAM</a></span>
+            Сайт работает c <b>{{ time.Format "02.01.06" .Site.Params.runTime.startTime }}</b> до последнего посетителя
+            {{- else -}}
+            Сайт работает до последнего посетителя
             {{- end -}}
         </div>
     </div>
