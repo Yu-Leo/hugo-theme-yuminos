@@ -555,8 +555,8 @@ a.article-title,
 .article-entry h5,
 .article-entry h6 {
   font-weight: 700;
-  line-height: 1.4em;
-  margin: 0.5em 0;
+  line-height: 1.0em;
+  margin: 1.0em 0;
 }
 .article-entry ul,
 .article-entry ol,
@@ -1212,13 +1212,12 @@ li {
 .article-entry a.anchor {
   border-bottom: none;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: text-bottom;
   user-select: none;
 }
 
 img.header-link {
-  display: inline-block;
-  height: 1.4em;
+  height: 1.2em;
 }
 
 img.header-link-grey {
