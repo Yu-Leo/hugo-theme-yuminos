@@ -1,8 +1,8 @@
 {{ if not .Site.Params.NoPostNavigation }}
     <nav class="nav-container">
         <div class="nav-wrap nav-wrap-left">
-            {{ if .NextPage }}
-            <a class="nav-btn nav-btn-link nav-btn-left" href="{{ .NextPage.RelPermalink }}" data-title="{{ .NextPage.Title }}">
+            {{ if .NextInSection }}
+            <a class="nav-btn nav-btn-link nav-btn-left" href="{{ .NextInSection.RelPermalink }}" data-title="{{ .NextPage.Title }}">
                 <img src='{{ "img/prev.svg" | absURL }}' class="nav-btn-icon" alt="<"/>
             </a>
             {{ end }}
@@ -15,8 +15,8 @@
         </div>
         
         <div class="nav-wrap nav-wrap-right">
-            {{ if .PrevPage }}
-            <a class="nav-btn nav-btn-link nav-btn-right" href="{{ .PrevPage.RelPermalink }}" data-title="{{ .PrevPage.Title }}">
+            {{ if .PrevInSection }}
+            <a class="nav-btn nav-btn-link nav-btn-right" href="{{ .PrevInSection.RelPermalink }}" data-title="{{ .PrevPage.Title }}">
                 <img src='{{ "img/next.svg" | absURL }}' class="nav-btn-icon" alt=">"/>
             </a>
             {{ end }}
