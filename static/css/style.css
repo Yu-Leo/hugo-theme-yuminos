@@ -1473,6 +1473,8 @@ a.anchor {
   cursor: pointer;
   color: #444;
   transition: color 150ms linear 0s;
+  background-color: rgba(242, 242, 242, 1);
+  padding: 1.1em 15px;
 }
 
 .article-entry details summary:hover {
