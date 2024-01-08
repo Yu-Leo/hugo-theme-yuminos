@@ -17,6 +17,12 @@
     - Иконка сайта, отображаемая на вкладке в браузерах, расположена в файле `static/favicon.ico`.
 3. Корректное отображение и работа блока с оглавлением постов (`table of content`, `toc`) при включении данной опции в конфиге, а так же системы `Disqus` при интеграции её на Ваш сайт **не гарантируются!**
 
+## 🗿 Философия темы
+
+- Минимализм
+- Контент важнее оформления
+- Удобство использования важно
+
 ## 🖼 Скриншоты
 
 **Главная страница**
@@ -82,7 +88,7 @@ paginate = 50
 
 ### RunTime
 
-Если данная опция включена (`enabled = true`), в футере будет выводиться количество дней и часов, прошедших с момента, указанного в параметре `startTime`.
+Если данная опция включена (`enabled = true`), в футере будет выводиться `startTime` (дата, начиная с которой работает сайт).
 
 ```toml
 [params]
@@ -99,27 +105,66 @@ paginate = 50
 
 </details>
 
-### Ссылка на Telegram-канал
+### Thinkpad-like кнопки
 
-Если URL указан, то в футере будет отображаться фраза "FOLLOW ME ON TELEGRAM", в которой слово "TELEGRAM" будет являться гиперссылкой на соответствующий URL.
+Если данная опция включена, обрамленные тегом `<kbd>...</kbd>` символы будут иметь стиль, схожий со стилем кнопок на клавиатурах ноутбуков Lenovo Thinkpad.
 
 ```toml
 [params]
-  [params.social]
-    telegram = "https://t.me/YU0DEV"
+  thinkpadKbd = true
 ```
 
 <details>
 
 <summary>Скриншот</summary>
 
-![footer.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/footer.png)
+![thinkpad-btn-on.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/thinkpad-btn-on.png)
+
+</details>
+
+Обычный вид кнопок (опция выключена):
+
+<details>
+
+<summary>Скриншот</summary>
+
+![thinkpad-btn-off.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/thinkpad-btn-off.png)
 
 </details>
 
 ## ⭐ Дополнительные возможности
 
-Здесь перечислены основные функциональные возможности, которые предоставляет форк **Yuminos** помимо возможностей, входящих в базовую тему ([Minos](https://github.com/carsonip/hugo-theme-minos)).
+### Скрытые блоки
+
+```html
+<details>
+<summary>Подробнее</summary>
+
+## Скрытый блок
+
+Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
+
+> Цитата
+</details>
+```
+
+<details>
+
+<summary>Скриншот (закрыт)</summary>
+
+![details-close.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/details-close.png)
+
+</details>
+
+<details>
+
+<summary>Скриншот (открыт)</summary>
+
+![details-open.png](https://github.com/Yu-Leo/hugo-theme-yuminos/blob/main/images/details-open.png)
+
+</details>
+
+Далее перечислены основные функциональные возможности, которые предоставляет форк **Yuminos** помимо возможностей, входящих в базовую тему ([Minos](https://github.com/carsonip/hugo-theme-minos)).
 
 ### Alerts
 
