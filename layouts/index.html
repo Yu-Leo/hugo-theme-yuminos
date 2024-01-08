@@ -9,9 +9,7 @@
             </div>
             <div>
                 {{ range where .Paginator.Pages "Params.hidden" "ne" "true"}}
-                    {{ if hasPrefix .RelPermalink "/posts" }}
-                        {{ partial "li.html" . }}
-                    {{ end }}
+                    {{ partial "li.html" . }}
                 {{ end }}
             </div>
             </section>
