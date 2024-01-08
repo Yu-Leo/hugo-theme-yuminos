@@ -25,7 +25,7 @@
                 <ul class="article-tag-list">
                     {{ range .Params.categories }}
                     <li class="article-tag-list-item">
-                        <a class="article-tag-list-link" href="{{ "/" | absLangURL }}{{ . | urlize }}">
+                        <a class="article-tag-list-link" href="{{ . | urlize | absURL }}">
                         <img src='{{ "img/folder.svg" | absURL }}' width=14 class="tag-icon" alt="category"/>{{ . }}</a>
                     </li>
                     {{ end }}
