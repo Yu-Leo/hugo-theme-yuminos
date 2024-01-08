@@ -311,10 +311,10 @@ a.article-title,
   vertical-align: baseline;
 }
 .article-entry sup {
-  top: -0.5em;
+  top: -0.65em;
 }
 .article-entry sub {
-  bottom: -0.2em;
+  bottom: -0.25em;
 }
 .article-entry small {
   font-size: 0.85em;
