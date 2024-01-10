@@ -2,22 +2,30 @@
 <body>
 <div id="container">
     {{ partial "header.html" . }}
-    <section id="main" class="outer">
-        <section class="layout-wrap">
-            <div class="layout-title">
-                <span>{{ .Title }}</span>
+    <section id="main" class="outer content">
+        <section class="archives-wrap">
+            <div class="archive-tag-wrap">
+                <span class="archive-tag">{{ .Title | lower }}</span>
             </div>
-            <div class="layout-wrap-inner tag-cloud">
-                {{ $site := .Site }}
-                {{ $data := .Data }}
-                <ul>
-                {{ range $key, $value := .Data.Terms.Alphabetical }}
-                <li>
-                    <a href="{{ $site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>({{ $value.Count }})
-                </li>
-                {{ end }}
-                </ul>
+            {{ $site := .Site }}
+            {{ $data := .Data }}
+            {{ range $key, $value := .Data.Terms.Alphabetical }}
+            <div class="article article-type-post" itemscope itemprop="blogPost">
+                <div class="article-inner">
+                    <div class="flexwrapper">
+                        <div class="flexleft">
+                            <div class="article-header">
+                                <h2><a class="article-title" href="{{ $site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a></h2>
+                            </div>
+                        </div>
+
+                        <div class="flexleft">
+                            <div class="article-meta">{{ $value.Count }} posts</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            {{ end }}
         </section>
     </section>
     {{ partial "footer.html" . }}
