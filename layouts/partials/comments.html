@@ -1,0 +1,11 @@
+{{- $showComments := .Site.Params.comments.enabled -}}
+
+{{- if isset .Page.Params "comments" -}}
+    {{- if not .Page.Params.comments -}}
+        {{- $showComments = false -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if $showComments -}}
+    {{ partial "giscus.html" .}}
+{{ end }}
