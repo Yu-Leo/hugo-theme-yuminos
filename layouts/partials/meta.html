@@ -1,8 +1,30 @@
-    {{- $description := or (.Description) (.Site.Params.Description) -}}
+    {{- $description := "" -}}
+    {{ if .Description }}
+        {{- $description = .Description -}}
+    {{ else if and .IsPage .Summary}}
+        {{- $description = .Summary -}}
+    {{ else }}
+        {{- $description = .Site.Params.Description -}}
+    {{ end }}
+    
     {{- $keywords := or (.Keywords) (.Site.Params.Keywords) -}}
     <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta itemprop="name" content="{{ .Title }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    {{ if $description -}}
+    <meta name="description" content="{{ $description }}">
+    <meta itemprop="description" content="{{ $description }}">
+    {{- end }}
+
     {{ with .Site.Params.Author -}}<meta name="author" content="{{ . }}">{{- end }}
-    {{ if $description -}} <meta name="description" content="{{ $description }}"> {{- end }}
-    {{ if $keywords -}} <meta name="keywords" content="{{ range $keywords }}{{ . }},{{ end }}"> {{- end }}
+    
+    {{ if $keywords -}}
+    <meta name="keywords" content="{{ range $keywords }}{{ . }},{{ end }}">
+    <meta itemprop="keywords" content="{{ range $keywords }}{{ . }},{{ end }}">
+    {{- end }}
+    
+    <meta name="application-name" content="{{ .Site.Title }}">
+    <meta name="robots" content="all">
+    {{ hugo.Generator }}
+    <meta name="color-scheme" content="light">

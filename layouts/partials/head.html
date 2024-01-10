@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
 <head>
-    <title>{{ .Title }}{{ if ne .Title .Site.Title }} - {{ .Site.Title }}{{ end }} </title>
+    <title>{{ .Title }}{{ if ne .Title .Site.Title }} - {{ .Site.Title }}{{ end }}</title>
 
     {{ partial "meta.html" . }}
-    {{ partial "og.html" . }}
+    {{ partial "open-graph.html" . }}
         
+    <link rel="canonical" href="{{ .Permalink }}">
     {{- with .OutputFormats.Get "rss" -}}
     <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
     {{- end }}
@@ -17,24 +18,20 @@
 
     <link rel="stylesheet" href='{{ "css/style.css" | absURL }}'>
 
-    {{ if .Site.Params.thinkpadKbd }}
+    {{- if .Site.Params.thinkpadKbd -}}
         <link rel="stylesheet" href='{{ "css/thinkpad_kbd.css" | absURL }}'>
-    {{ end }}
+    {{- end -}}
 
-    {{ range .Site.Params.customCss -}}
+    {{- range .Site.Params.customCss -}}
         <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
 
-    {{ hugo.Generator }}
-
-    {{ if $.Param "katex" }}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-            onload="renderMathInElement(document.body);"></script>
-    {{ end }}
+    {{- if $.Param "katex" }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    {{ end -}}
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    {{ template "_internal/opengraph.html" . }}
 </head>

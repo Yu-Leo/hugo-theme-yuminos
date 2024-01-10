@@ -1,0 +1,19 @@
+    <!-- https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/opengraph.html -->
+    
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+
+    {{- $images := partial "_funcs/get-page-images" . -}}
+    {{- range first 6 $images -}}
+      <meta property="og:image" content="{{ .Permalink }}" />
+    {{- end -}}
+
+    {{- if .IsPage }}
+    {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+    <meta property="article:section" content="{{ .Section }}" />
+    {{ with .PublishDate }}<meta property="article:published_time" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end }}
+    {{ with .Lastmod }}<meta property="article:modified_time" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end }}
+    {{- end -}}
+
