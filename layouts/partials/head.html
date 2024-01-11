@@ -34,4 +34,8 @@
     {{ end -}}
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    {{ if and .Site.Params.yandexMetrikaId (eq hugo.Environment "production") }}
+        {{ partial "yandex-metrika.html" . }}
+    {{- end }}
 </head>
