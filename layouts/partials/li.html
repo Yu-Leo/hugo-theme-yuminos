@@ -12,11 +12,6 @@
         <div class="flexleft">
         <div class="article-meta">
             <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "02.01.06" }}</time>
-            {{ if .Site.DisqusShortname }}
-            <div class="article-comment-link-wrap">
-                <a href="{{ .RelPermalink }}#disqus_thread" class="article-comment-link">{{ T "Comments" }}</a>
-            </div>
-            {{ end }}
         </div>
         </div>
         </div>
