@@ -1482,3 +1482,7 @@ a.anchor {
   color: #F37E0C;
 }
 
+article.article .article-entry .highlight pre code span > a {
+  border-bottom: none
+}
+
