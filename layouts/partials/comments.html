@@ -1,9 +1,7 @@
 {{- $showComments := .Site.Params.comments.enabled -}}
 
-{{- if isset .Page.Params "comments" -}}
-    {{- if not .Page.Params.comments -}}
-        {{- $showComments = false -}}
-    {{- end -}}
+{{- if and (isset .Page.Params "comments") (not .Page.Params.comments) -}}
+    {{- $showComments = false -}}
 {{- end -}}
 
 {{- if $showComments -}}
