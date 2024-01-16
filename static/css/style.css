@@ -599,12 +599,10 @@ a.article-title,
   padding: 10px 0;
 }
 .article-entry blockquote {
-  font-family: "Lato";
-  margin: 0 0;
-  text-align: center;
   padding: 1px 20px;
   margin: 0.5em 0;
   border-left: solid 3px #F37E0C;
+  font-style: italic;
 }
 .article-entry blockquote footer {
   font-size: 16px;
