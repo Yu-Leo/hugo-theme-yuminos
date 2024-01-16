@@ -1228,12 +1228,13 @@ img.header-link-grey:hover {
 }
 
 #copy-title-link {
+  display: inline-block;
+  vertical-align: middle;
   padding-left: 5px;
 }
 
 #copy-title-link img {
-  height: 1.1em;
-  vertical-align: text-top;
+  height: 1.0em;
 }
 
 .article-title img {
