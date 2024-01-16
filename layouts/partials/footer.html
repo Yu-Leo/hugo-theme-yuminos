@@ -11,13 +11,11 @@
 
     <script type="text/javascript">
         window.__theme = {
-            {{- if .Site.Params.runTime.enabled -}}
-            startTime: "{{- .Site.Params.runTime.startTime -}}"
-            {{- end -}}
+            linkToPage: "{{- .Permalink -}}"
         }
     </script>
     
-    <script src='{{ "js/uptime.js" | absURL }}'></script>
+    <script src='{{ "js/copy-title-link.js" | absURL }}'></script>
     
     <script>
         document.getElementById('main-nav-toggle').addEventListener('click', function() {

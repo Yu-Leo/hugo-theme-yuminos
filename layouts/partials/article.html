@@ -3,7 +3,8 @@
         <div class="flexwrapper">
             {{ if .Title }}
             <header class="article-header">
-                <h1 class="article-title" itemprop="name">{{ .Title }}</h1>
+                <!-- <h1 class="article-title" itemprop="name">{{ .Title }}</h1> -->
+        <h1 class="article-title" itemprop="name">{{ .Title }}<span class="anchor" id="copy-title-link" href="{{ .Permalink | safeURL }}"><img src='{{ "img/forward.svg" | absURL }}' class="title-link-grey title-link" alt="copy"/></span></h1>
             </header>
             {{ end }}
 

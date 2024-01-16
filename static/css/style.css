@@ -1227,6 +1227,36 @@ img.header-link-grey:hover {
   filter: invert(62%) sepia(43%) saturate(3796%) hue-rotate(353deg) brightness(95%) contrast(100%);
 }
 
+#copy-title-link {
+  padding-left: 5px;
+}
+
+#copy-title-link img {
+  height: 1.0em;
+  vertical-align: bottom;
+}
+
+.article-title img {
+  visibility: hidden;
+}
+
+.article-title:hover img {
+  visibility: visible;
+}
+
+img.title-link-grey {
+  filter: invert(81%) sepia(0%) saturate(5123%) hue-rotate(152deg) brightness(70%) contrast(97%);
+}
+
+img.title-link-grey:hover {
+  filter: invert(62%) sepia(43%) saturate(3796%) hue-rotate(353deg) brightness(95%) contrast(100%);
+  visibility: visible;
+}
+
+img.title-link-green {
+  filter: invert(60%) sepia(84%) saturate(2924%) hue-rotate(67deg) brightness(110%) contrast(92%);
+}
+
 kbd {
   background-color: #495057;
   color: #fff;
