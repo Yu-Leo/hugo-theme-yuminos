@@ -1232,8 +1232,8 @@ img.header-link-grey:hover {
 }
 
 #copy-title-link img {
-  height: 1.0em;
-  vertical-align: bottom;
+  height: 1.1em;
+  vertical-align: text-top;
 }
 
 .article-title img {
@@ -1515,3 +1515,6 @@ article.article .article-entry .highlight pre code span > a {
   border-bottom: none
 }
 
+.article-inner .article-title {
+  line-height: 1.2em;
+}
