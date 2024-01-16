@@ -17,7 +17,7 @@
     <meta itemprop="description" content="{{ $description }}">
     {{- end }}
 
-    {{ with .Site.Author.name -}}<meta name="author" content="{{ . }}">{{- end }}
+    {{ with .Site.Params.author.name -}}<meta name="author" content="{{ . }}">{{- end }}
     
     {{ if $keywords -}}
     <meta name="keywords" content="{{ range $keywords }}{{ . }},{{ end }}">
