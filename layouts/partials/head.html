@@ -17,9 +17,10 @@
     <link href='{{ "webfonts/jetbrainsmono/main.css" | absURL }}' rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href='{{ "css/style.css" | absURL }}'>
+    <link rel="stylesheet" href='{{ "css/highlight-style.css" | absURL }}'>
 
     {{- if .Site.Params.thinkpadKbd -}}
-        <link rel="stylesheet" href='{{ "css/thinkpad_kbd.css" | absURL }}'>
+        <link rel="stylesheet" href='{{ "css/thinkpad-kbd.css" | absURL }}'>
     {{- end -}}
 
     {{- range .Site.Params.customCss -}}
