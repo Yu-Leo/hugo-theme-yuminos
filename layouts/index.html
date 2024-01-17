@@ -8,9 +8,11 @@
                 <span class="archive-tag">СТАТЬИ</span>
             </div>
             <div>
-                {{ range where .Paginator.Pages "Params.hidden" "ne" "true"}}
-                    {{ partial "li.html" . }}
-                {{ end }}
+            {{ $pages := where .Site.RegularPages "Section" "eq" "posts" }}
+            {{ $paginator := .Paginate $pages }}
+            {{ range $paginator.Pages }}
+                {{ partial "li.html" . }}
+            {{ end }}
             </div>
             </section>
         {{ partial "pagination.html" . }}
