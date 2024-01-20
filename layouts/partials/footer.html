@@ -1,8 +1,8 @@
 <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner footertext">
-            {{- if .Site.Params.runTime.enabled -}}
-            Сайт работает c <b>{{ time.Format "02.01.06" .Site.Params.runTime.startTime }}</b> до последнего посетителя
+            {{- if .Site.Params.startTime -}}
+            Сайт работает c <b>{{ time.Format "02.01.06" .Site.Params.startTime }}</b> до последнего посетителя
             {{- else -}}
             Сайт работает до последнего посетителя
             {{- end -}}
