@@ -1163,7 +1163,7 @@ mark {
   padding: 0 0.25em;
 }
 .content {
-  min-height: calc(100vh - 57px - 24px - 70px);
+  min-height: calc(100vh - 57px - 13px - 70px);
 }
 
 li {
