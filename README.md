@@ -58,6 +58,14 @@ git submodule add https://github.com/Yu-Leo/hugo-theme-yuminos
 theme = "hugo-theme-yuminos"
 ```
 
+## ⬆ Обновление
+
+Если тема была установлена как git-подмодуль, обновить её можно следующим образом:
+
+```shell
+git submodule update --remote themes/hugo-theme-yuminos
+```
+
 ## ⭐ Возможности
 
 ### Пагинация
