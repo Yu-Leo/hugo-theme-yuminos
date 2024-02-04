@@ -1282,17 +1282,6 @@ a.footnote-backref {
   background-color: rgba(225, 11, 57, 0.25);
 }
 
-.scroll-to-top {
-  text-decoration: none;
-  border: none;
-  background: #000;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  color: #fff;
-  font-size: 1.1em;
-}
-
 .nav-container {
   margin-top: 20px;
   display: flex;
@@ -1302,16 +1291,12 @@ a.footnote-backref {
 }
 
 .nav-wrap {
-  width: 33%;
+  width: 50%;
   display: flex;
 }
 
 .nav-wrap-left {
   justify-content: start;
-}
-
-.nav-wrap-center {
-  justify-content: center;
 }
 
 .nav-wrap-right {
@@ -1365,8 +1350,24 @@ a.footnote-backref {
   filter: invert(46%) sepia(100%) saturate(891%) hue-rotate(358deg) brightness(99%) contrast(93%);
   cursor: pointer;
 }
+
 #scroll-to-top-btn {
+  background: #f2f2f2;
   visibility: hidden;
+  opacity: 0;
+  transition: 150ms;
+}
+
+#scroll-to-top-btn:hover {
+  background: #000;
+}
+
+#scroll-to-top-btn .nav-btn-icon {
+  filter: invert(0%) sepia(0%) saturate(7465%) hue-rotate(334deg) brightness(103%) contrast(108%);
+}
+
+#scroll-to-top-btn .nav-btn-icon:hover {
+  filter: invert(46%) sepia(100%) saturate(891%) hue-rotate(358deg) brightness(99%) contrast(93%);
 }
 
 .alert img {
@@ -1487,4 +1488,13 @@ article.article .article-entry .highlight pre code span > a {
 
 .article-inner .article-title {
   line-height: 1.2em;
+}
+
+.menu-btn-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: $menu-btn-size;
+  height: $menu-btn-size;
+  z-index: 40;
 }

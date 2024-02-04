@@ -1,3 +1,9 @@
+<div class="menu-btn-container">
+    <button class="nav-btn" id="scroll-to-top-btn">
+        <img src='{{ "img/up.svg" | absURL }}' class="nav-btn-icon" alt="^" />
+    </button>
+</div>
+
 {{ if not .Site.Params.NoPostNavigation }}
     <nav class="nav-container">
         <div class="nav-wrap nav-wrap-left">
@@ -7,13 +13,6 @@
             </a>
             {{ end }}
         </div>
-        
-        <div class="nav-wrap nav-wrap-center">
-            <button class="nav-btn" id="scroll-to-top-btn">
-                <img src='{{ "img/up.svg" | absURL }}' class="nav-btn-icon" alt="^" />
-            </button>
-        </div>
-        
         <div class="nav-wrap nav-wrap-right">
             {{ if .PrevInSection }}
             <a class="nav-btn nav-btn-link nav-btn-right" href="{{ .PrevInSection.RelPermalink }}" data-title="{{ .PrevPage.Title }}">
