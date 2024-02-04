@@ -1471,3 +1471,17 @@ article.article .article-entry .highlight pre code span > a {
   height: $menu-btn-size;
   z-index: 40;
 }
+
+.code-name {
+  font-family: "JetBrainsMono", monospace;
+  border-bottom: 2px dotted #ebdbb2;
+  margin-bottom: 10px;
+  margin-left: -15px;
+  padding-left: 15px;
+  margin-right: -48px;
+  margin-top: -12px;
+  font-weight: 700;
+  color: #ebdbb2;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
