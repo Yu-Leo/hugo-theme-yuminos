@@ -1313,33 +1313,6 @@ a.footnote-backref {
   position: relative; 
 }
 
-.nav-btn-link:after {
-  content: attr(data-title);
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  pointer-events: none;
-  color: #000; 
-  font-weight: 700;
-  background-color: #fff;
-  padding: 10px 5px; 
-  text-transform: uppercase;
-  width: max-content;
-  z-index: 289;
-}
-
-.nav-btn:hover:after {
-  opacity: 1;
-}
-
-.nav-btn-left:after {
-  left: 3em;
-}
-
-.nav-btn-right:after {
-  right: 3em;
-}
-
 .nav-btn-icon {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(96deg) brightness(108%) contrast(101%);
   height: 26px;
