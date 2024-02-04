@@ -1474,7 +1474,7 @@ article.article .article-entry .highlight pre code span > a {
 
 .code-name {
   font-family: "JetBrainsMono", monospace;
-  border-bottom: 2px dotted #ebdbb2;
+  border-bottom: 1px solid #ebdbb2;
   margin-bottom: 10px;
   margin-left: -15px;
   padding-left: 15px;
