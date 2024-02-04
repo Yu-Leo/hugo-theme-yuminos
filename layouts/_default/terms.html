@@ -7,7 +7,6 @@
             <div class="archive-tag-wrap">
                 <span class="archive-tag">{{ .Title | lower }}</span>
             </div>
-            {{ $site := .Site }}
             {{ $data := .Data }}
             {{ range $key, $value := .Data.Terms.Alphabetical }}
             <div class="article article-type-post" itemscope itemprop="blogPost">
@@ -15,7 +14,7 @@
                     <div class="flexwrapper">
                         <div class="flexleft">
                             <div class="article-header">
-                                <h2><a class="article-title" href="{{ $site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a></h2>
+                                <h2><a class="article-title" href="{{ $data.Plural | absLangURL }}/{{ $value.Name }}">{{ $value.Name }}</a></h2>
                             </div>
                         </div>
                         <div class="flexleft">
