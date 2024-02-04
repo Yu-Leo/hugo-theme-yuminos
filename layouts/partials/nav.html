@@ -4,21 +4,19 @@
     </button>
 </div>
 
-{{ if not .Site.Params.NoPostNavigation }}
-    <nav class="nav-container">
-        <div class="nav-wrap nav-wrap-left">
-            {{ if .NextInSection }}
-            <a class="nav-btn nav-btn-link nav-btn-left" href="{{ .NextInSection.RelPermalink }}">
-                <img src='{{ "img/prev.svg" | absURL }}' class="nav-btn-icon" alt="<"/>
-            </a>
-            {{ end }}
-        </div>
-        <div class="nav-wrap nav-wrap-right">
-            {{ if .PrevInSection }}
-            <a class="nav-btn nav-btn-link nav-btn-right" href="{{ .PrevInSection.RelPermalink }}">
-                <img src='{{ "img/next.svg" | absURL }}' class="nav-btn-icon" alt=">"/>
-            </a>
-            {{ end }}
-        </div>
-    </nav>
-{{ end }}
+<nav class="nav-container">
+    <div class="nav-wrap nav-wrap-left">
+        {{ if .NextInSection }}
+        <a class="nav-btn nav-btn-link nav-btn-left" href="{{ .NextInSection.RelPermalink }}">
+            <img src='{{ "img/prev.svg" | absURL }}' class="nav-btn-icon" alt="<"/>
+        </a>
+        {{ end }}
+    </div>
+    <div class="nav-wrap nav-wrap-right">
+        {{ if .PrevInSection }}
+        <a class="nav-btn nav-btn-link nav-btn-right" href="{{ .PrevInSection.RelPermalink }}">
+            <img src='{{ "img/next.svg" | absURL }}' class="nav-btn-icon" alt=">"/>
+        </a>
+        {{ end }}
+    </div>
+</nav>
