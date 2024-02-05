@@ -1328,7 +1328,6 @@ a.footnote-backref {
   background: #f2f2f2;
   visibility: hidden;
   opacity: 0;
-  transition: 150ms;
 }
 
 #scroll-to-top-btn:hover {
