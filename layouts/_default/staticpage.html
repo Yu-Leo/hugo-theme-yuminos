@@ -6,12 +6,11 @@
     <section id="main" class="outer content">
       <article class="article article-type-post" itemscope itemprop="blogPost">
           <div class="article-inner">
-              <!-- {{ if .Title }} -->
-              <!-- <header class="article-header"> -->
-              <!--     <h1 class="article-title" itemprop="name">{{ .Title }}</h1> -->
-              <!-- </header> -->
-              <!-- {{ end }} -->
-
+              <style>
+              .article-entry h1 {
+                  margin-top: 0px;
+              }
+              </style>
               <div class="article-entry" itemprop="articleBody">
                   {{ .Content }}
               </div>
