@@ -27,7 +27,7 @@
 /* NameEntity */ .chroma .ni { color: #fabd2f }
 /* NameException */ .chroma .ne { color: #fb4934 }
 /* NameFunction */ .chroma .nf { color: #fabd2f }
-/* NameFunctionMagic */ .chroma .fm {  }
+/* NameFunctionMagic */ .chroma .fm { color: #fb4934 }
 /* NameLabel */ .chroma .nl { color: #fb4934 }
 /* NameNamespace */ .chroma .nn {  }
 /* NameOther */ .chroma .nx {  }
