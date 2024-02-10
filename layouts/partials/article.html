@@ -9,7 +9,7 @@
 
             <div class="article-meta">
                 {{- if not .Params.omitDate }}
-                    <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "02.01.06" }}</time>
+                    <time datetime='{{ .Date.Format "2006-01-02T15:04:05.000-07:00" }}' itemprop="datePublished">{{ .Date.Format "2006-01-02" }}</time>
                 {{ end -}}
             </div>
         </div> 
@@ -35,6 +35,10 @@
                     {{ end }}
                 </ul>
             {{ end }}
+            <div class="article-tag-list-item words-count">
+                <span class="article-tag-list-link">
+                <img src='{{ "img/edit.svg" | absURL }}' width=14 class="tag-icon" alt="tag"/>{{ .WordCount }}</span>
+            </div>
         </footer>
         
         <div class="article-entry" itemprop="articleBody">

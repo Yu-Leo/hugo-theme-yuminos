@@ -39,7 +39,7 @@ a:hover {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .flexleft .article-header h2 {
@@ -677,6 +677,7 @@ a.article-title,
   margin-right: 5px;
   text-transform: uppercase;
   margin-bottom: 0px;
+  color: #939393;
 }
 .article-tag-list-first {
   float: left;
@@ -1483,4 +1484,14 @@ article.article .article-entry .highlight pre code span > a {
   color: #ebdbb2;
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.words-count {
+  float: right;
+  margin-right: 0px;
+  text-transform: lowercase;
+}
+
+.article-meta time {
+  line-height: 1.5em;
 }
