@@ -1348,6 +1348,7 @@ a.footnote-backref {
   vertical-align: middle;
   user-select: none;
   padding-right: 4px;
+  padding-left: 2px;
 }
 
 .alert span {
